@@ -80,7 +80,7 @@ Config.Plates = {
         AttachedVehicle = nil,
     },
     [3] = {
-        coords = vector4(-342.64 -113.85, 38.34, 249.5),
+        coords = vector4(-342.64, -113.85, 38.34, 249.5),
         AttachedVehicle = nil,
     },
 }
