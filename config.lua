@@ -72,15 +72,23 @@ Config.Businesses = {
 
 Config.Plates = {
     [1] = {
-        coords = vector4(-340.95, -128.24, 39, 160.46),
+        coords = vector4(-349.61, -131.27, 38.34, 250.41),
+        AttachedVehicle = nil,
+    },
+    [2] = {
+        coords = vector4(-347.04, -124.44, 38.34, 25.65),
+        AttachedVehicle = nil,
+    },
+    [3] = {
+        coords = vector4(-342.64 -113.85, 38.34, 249.5),
         AttachedVehicle = nil,
     },
 }
 
 Config.Locations = {
     ["exit"] = vector3(-339.04, -135.53, 39),
-    ["stash"] = vector3(-323.19, -129.86, 39),
-    ["duty"] = vector3(-344.35, -123.39, 39), 
+    ["stash"] = vector3(-348.62, -169.86, 39.01),
+    ["duty"] = vector3(-341.38, -162.13, 44.59), 
     ["vehicle"] = vector4(-370.51, -107.88, 38.35, 72.56), 
 }
 
@@ -93,7 +101,7 @@ Config.Vehicles = {
 
 Config.MinimalMetersForDamage = {
     [1] = {
-        min = 8000,
+        min = 2000,
         max = 12000,
         multiplier = {
             min = 1,
@@ -101,7 +109,7 @@ Config.MinimalMetersForDamage = {
         }
     },
     [2] = {
-        min = 12000,
+        min = 6000,
         max = 16000,
         multiplier = {
             min = 8,
@@ -109,7 +117,7 @@ Config.MinimalMetersForDamage = {
         }
     },
     [3] = {
-        min = 12000,
+        min = 10000,
         max = 16000,
         multiplier = {
             min = 16,

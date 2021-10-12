@@ -92,7 +92,7 @@ Citizen.CreateThread(function()
     SetBlipAlpha(Blip, 0.7)
 
     BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Autocare Mechanic")
+    AddTextComponentSubstringPlayerName("Los Santos Customs")
     EndTextCommandSetBlipName(Blip)
 end)
 
@@ -261,7 +261,7 @@ end
 function VehicleOptions()
     ClearMenu()
     Menu.addButton("Disconnect Vehicle", "UnattachVehicle", nil)
-    -- Menu.addButton("Check Status", "CheckStatus", nil)
+    Menu.addButton("Check Status", "CheckStatus", nil)
     Menu.addButton("Vehicle Parts", "PartsMenu", nil)
     Menu.addButton("Close Menu", "CloseMenu", nil)
 end
