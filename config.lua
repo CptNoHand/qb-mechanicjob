@@ -1,7 +1,5 @@
 Config = {}
 
-Config.AttachedVehicle = nil
-
 Config.AuthorizedIds = {
     "insertcitizenidhere",
 }
@@ -68,21 +66,6 @@ Config.RepairCostAmount = {
 
 Config.Businesses = {
     "Auto Repair",
-}
-
-Config.Plates = {
-    [1] = {
-        coords = vector4(-349.61, -131.27, 38.34, 250.41),
-        AttachedVehicle = nil,
-    },
-    [2] = {
-        coords = vector4(-347.04, -124.44, 38.34, 25.65),
-        AttachedVehicle = nil,
-    },
-    [3] = {
-        coords = vector4(-342.64, -113.85, 38.34, 249.5),
-        AttachedVehicle = nil,
-    },
 }
 
 Config.Locations = {
