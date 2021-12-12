@@ -583,6 +583,11 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
             end
         end
     end)
+    QBCore.Functions.TriggerCallback('qb-vehicletuning:server:GetAttachedVehicle', function(plates)
+        for k, v in pairs(plates) do
+            Config.Plates[k].AttachedVehicle = v.AttachedVehicle
+        end
+    end)
 
     QBCore.Functions.TriggerCallback('qb-vehicletuning:server:GetDrivingDistances', function(retval)
         DrivingDistance = retval
