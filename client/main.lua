@@ -421,7 +421,7 @@ local openingDoor = false
 CreateThread(function()
     while true do
         if LocalPlayer.state.isLoggedIn then
-            SetClosestPlate()
+            Wait(100)
         end
         Wait(1000)
     end
