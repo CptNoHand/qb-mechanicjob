@@ -760,7 +760,7 @@ end)
 CreateThread(function()
     while true do
         if LocalPlayer.state.isLoggedIn then
-            Wait(100)
+            SetClosestPlate()
         end
         Wait(1000)
     end
