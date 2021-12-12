@@ -148,6 +148,9 @@ QBCore.Commands.Add("setvehiclestatus", "Set Vehicle Status", {{
     TriggerClientEvent("vehiclemod:client:setPartLevel", source, part, level)
 end, "god")
 
+QBCore.Functions.CreateCallback('qb-vehicletuning:server:GetAttachedVehicle', function(source, cb)
+    cb(Config.Plates)
+end)
 
 QBCore.Functions.CreateCallback('qb-vehicletuning:server:IsMechanicAvailable', function(source, cb)
     local amount = 0
@@ -160,6 +163,42 @@ QBCore.Functions.CreateCallback('qb-vehicletuning:server:IsMechanicAvailable', f
         end
     end
     cb(amount)
+end)
+
+RegisterNetEvent('qb-vehicletuning:server:SetAttachedVehicle', function(veh, k)
+    if veh ~= false then
+        Config.Plates[k].AttachedVehicle = veh
+        TriggerClientEvent('qb-vehicletuning:client:SetAttachedVehicle', -1, veh, k)
+    else
+        Config.Plates[k].AttachedVehicle = nil
+        TriggerClientEvent('qb-vehicletuning:client:SetAttachedVehicle', -1, false, k)
+    end
+end)
+
+RegisterNetEvent('qb-vehicletuning:server:CheckForItems', function(part)
+    local src = source
+    local Player = QBCore.Functions.GetPlayer(src)
+    local RepairPart = Player.Functions.GetItemByName(Config.RepairCostAmount[part].item)
+
+    if RepairPart ~= nil then
+        if RepairPart.amount >= Config.RepairCostAmount[part].costs then
+            TriggerClientEvent('qb-vehicletuning:client:RepaireeePart', src, part)
+            Player.Functions.RemoveItem(Config.RepairCostAmount[part].item, Config.RepairCostAmount[part].costs)
+
+            for i = 1, Config.RepairCostAmount[part].costs, 1 do
+                TriggerClientEvent('inventory:client:ItemBox', src,
+                    QBCore.Shared.Items[Config.RepairCostAmount[part].item], "remove")
+                Wait(500)
+            end
+        else
+            TriggerClientEvent('QBCore:Notify', src,
+                "You Dont Have Enough " .. QBCore.Shared.Items[Config.RepairCostAmount[part].item]["label"] .. " (min. " ..
+                    Config.RepairCostAmount[part].costs .. "x)", "error")
+        end
+    else
+        TriggerClientEvent('QBCore:Notify', src, "You Do Not Have " ..
+            QBCore.Shared.Items[Config.RepairCostAmount[part].item]["label"] .. " bij je!", "error")
+    end
 end)
 
 function IsAuthorized(CitizenId)
