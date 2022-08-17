@@ -772,20 +772,6 @@ CreateThread(function()
 end)
 
 CreateThread(function()
-    local c = Config.Locations["exit"]
-    local Blip = AddBlipForCoord(c.x, c.y, c.z)
-    SetBlipSprite (Blip, 446)
-    SetBlipDisplay(Blip, 4)
-    SetBlipScale  (Blip, 0.7)
-    SetBlipAsShortRange(Blip, true)
-    SetBlipColour(Blip, 0)
-    SetBlipAlpha(Blip, 0.7)
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentSubstringPlayerName("Autocare Mechanic")
-    EndTextCommandSetBlipName(Blip)
-end)
-
-CreateThread(function()
     while true do
         local inRange = false
         if LocalPlayer.state.isLoggedIn then
