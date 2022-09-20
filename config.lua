@@ -114,24 +114,24 @@ Config.Vehicles = {
 
 Config.MinimalMetersForDamage = {
     [1] = {
-        min = 6000,
-        max = 16000,
+        min = 2000,
+        max = 12000,
         multiplier = {
             min = 1,
             max = 8,
         }
     },
     [2] = {
-        min = 10000,
-        max = 20000,
+        min = 6000,
+        max = 16000,
         multiplier = {
             min = 8,
             max = 16,
         }
     },
     [3] = {
-        min = 16000,
-        max = 24000,
+        min = 10000,
+        max = 20000,
         multiplier = {
             min = 16,
             max = 24,
