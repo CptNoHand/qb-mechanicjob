@@ -331,20 +331,20 @@ local function ApplyEffects(vehicle)
                 end
             end
 
-            if VehicleStatus[plate]["brakes"] <= 80 and (chance >= 41 and chance <= 60) then
-                if VehicleStatus[plate]["brakes"] <= 80 and VehicleStatus[plate]["brakes"] >= 60 then
+            if VehicleStatus[plate]["brakes"] <= 35 and (chance >= 30 and chance <= 32) then
+                if VehicleStatus[plate]["brakes"] <= 15 and VehicleStatus[plate]["brakes"] >= 14 then
                     SetVehicleHandbrake(vehicle, true)
                     Wait(1000)
                     SetVehicleHandbrake(vehicle, false)
-                elseif VehicleStatus[plate]["brakes"] <= 59 and VehicleStatus[plate]["brakes"] >= 40 then
+                elseif VehicleStatus[plate]["brakes"] <= 12 and VehicleStatus[plate]["brakes"] >= 11 then
                     SetVehicleHandbrake(vehicle, true)
                     Wait(3000)
                     SetVehicleHandbrake(vehicle, false)
-                elseif VehicleStatus[plate]["brakes"] <= 39 and VehicleStatus[plate]["brakes"] >= 20 then
+                elseif VehicleStatus[plate]["brakes"] <= 8 and VehicleStatus[plate]["brakes"] >= 7 then
                     SetVehicleHandbrake(vehicle, true)
                     Wait(5000)
                     SetVehicleHandbrake(vehicle, false)
-                elseif VehicleStatus[plate]["brakes"] <= 19 and VehicleStatus[plate]["brakes"] >= 6 then
+                elseif VehicleStatus[plate]["brakes"] <= 6 and VehicleStatus[plate]["brakes"] >= 2 then
                     SetVehicleHandbrake(vehicle, true)
                     Wait(7000)
                     SetVehicleHandbrake(vehicle, false)
